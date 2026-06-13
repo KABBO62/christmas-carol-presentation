@@ -1,189 +1,350 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>A Christmas Carol - Themes & Symbolism</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
-		<style>
-			.reveal h1, .reveal h2, .reveal h3 {
-				text-transform: none;
-			}
-			.reveal {
-				font-size: 36px;
-			}
-			.christmas-red { color: #E8334A; }
-			.christmas-green { color: #26A65B; }
-			.highlight { background: rgba(255, 255, 0, 0.3); padding: 5px 10px; }
-			.slide-content {
-				text-align: left;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Christmas Carol - Themes & Symbolism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .presentation-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            padding: 60px 40px;
+            min-height: 600px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #E8334A;
+        }
+        
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            color: #26A65B;
+        }
+        
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+        
+        p {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #26A65B;
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 0, 0.2);
+            padding: 10px 15px;
+            border-left: 4px solid #FFD700;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #26A65B;
+        }
+        
+        th {
+            background: rgba(38, 166, 91, 0.2);
+            color: #26A65B;
+            font-weight: bold;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #2d2d44;
+            border-top: 2px solid #26A65B;
+        }
+        
+        button {
+            background: #E8334A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #26A65B;
+        }
+        
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            color: #26A65B;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .title-slide {
+            text-align: center;
+        }
+        
+        .title-slide h1 {
+            font-size: 56px;
+            margin-bottom: 30px;
+        }
+        
+        .title-slide p {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+        
+        .thank-you {
+            text-align: center;
+        }
+        
+        .thank-you h1 {
+            font-size: 56px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>🎄 A Christmas Carol 🎄</h1>
+            <h3>Themes & Symbolism</h3>
+            <p style="font-size: 20px; margin-top: 40px;">By Charles Dickens</p>
+            <p style="font-size: 18px; color: #26A65B; margin-top: 60px;">Presented by: Mahfuz Basher</p>
+            <p style="font-size: 16px;">BUFT | June 2026</p>
+        </div>
 
-				<!-- Title Slide -->
-				<section>
-					<h1><span class="christmas-red">A Christmas Carol</span></h1>
-					<h3>Themes & Symbolism</h3>
-					<p>By Charles Dickens</p>
-					<p style="font-size: 20px; margin-top: 40px;"><span class="christmas-green">🎄 Presented by: Mahfuz Basher 🎄</span></p>
-					<p style="font-size: 18px;">BUFT | June 2026</p>
-				</section>
+        <!-- Slide 2: About the Novel -->
+        <div class="slide">
+            <h2>About the Novel</h2>
+            <ul>
+                <li><strong>Author:</strong> Charles Dickens</li>
+                <li><strong>Published:</strong> 1843</li>
+                <li><strong>Genre:</strong> Novella / Moral Tale</li>
+                <li><strong>Setting:</strong> Victorian England</li>
+                <li><strong>Main Character:</strong> Ebenezer Scrooge</li>
+                <li><strong>Theme:</strong> Redemption, Social Responsibility</li>
+            </ul>
+        </div>
 
-				<!-- Slide 1: Introduction -->
-				<section>
-					<h2><span class="christmas-red">About the Novel</span></h2>
-					<div class="slide-content">
-						<ul>
-							<li><strong>Author:</strong> Charles Dickens</li>
-							<li><strong>Published:</strong> 1843</li>
-							<li><strong>Genre:</strong> Novella / Moral Tale</li>
-							<li><strong>Setting:</strong> Victorian England</li>
-							<li><strong>Main Character:</strong> Ebenezer Scrooge</li>
-							<li><strong>Theme:</strong> Redemption, Social Responsibility</li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 3: Redemption & Transformation -->
+        <div class="slide">
+            <h2>Theme 1: Redemption & Transformation</h2>
+            <ul>
+                <li><strong>Scrooge's Journey:</strong> From miserly, heartless man to compassionate human</li>
+                <li class="highlight">"I will honor Christmas in my heart and keep it all the year"</li>
+                <li><strong>The Three Ghosts:</strong> Catalysts for change</li>
+                <li><strong>Key Message:</strong> It's never too late to change</li>
+                <li><strong>Impact:</strong> Scrooge becomes the "Second Father" to Tiny Tim</li>
+            </ul>
+        </div>
 
-				<!-- Slide 2: Theme 1 - Redemption & Transformation -->
-				<section>
-					<h2><span class="christmas-red">Theme 1: Redemption & Transformation</span></h2>
-					<div class="slide-content">
-						<ul>
-							<li><strong>Scrooge's Journey:</strong> From miserly, heartless man to compassionate human</li>
-							<li><span class="highlight">"I will honor Christmas in my heart and keep it all the year"</span></li>
-							<li><strong>The Three Ghosts:</strong> Catalysts for change</li>
-							<li><strong>Key Message:</strong> It's never too late to change</li>
-							<li><strong>Impact:</strong> Scrooge becomes the "Second Father" to Tiny Tim</li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 4: The Three Ghosts -->
+        <div class="slide">
+            <h2>The Three Ghosts: Symbolic Meaning</h2>
+            <ul>
+                <li><strong>Ghost of Christmas Past:</strong> Represents memory & nostalgia
+                    <div style="margin-top: 10px; margin-left: 30px;">Shows Scrooge's lost humanity</div>
+                </li>
+                <li style="margin-top: 20px;"><strong>Ghost of Christmas Present:</strong> Represents current reality
+                    <div style="margin-top: 10px; margin-left: 30px;">Shows joy, family, and poverty around him</div>
+                </li>
+                <li style="margin-top: 20px;"><strong>Ghost of Christmas Yet to Come:</strong> Represents the future
+                    <div style="margin-top: 10px; margin-left: 30px;">Shows the consequences of his actions</div>
+                </li>
+            </ul>
+        </div>
 
-				<!-- Slide 3: The Three Ghosts - Symbolism -->
-				<section>
-					<h2><span class="christmas-green">The Three Ghosts: Symbolic Meaning</span></h2>
-					<div class="slide-content">
-						<ul style="font-size: 28px;">
-							<li><strong>Ghost of Christmas Past:</strong> Represents memory & nostalgia
-								<ul style="font-size: 24px; margin-top: 10px;">
-									<li>Shows Scrooge's lost humanity</li>
-								</ul>
-							</li>
-							<li style="margin-top: 15px;"><strong>Ghost of Christmas Present:</strong> Represents the current reality
-								<ul style="font-size: 24px; margin-top: 10px;">
-									<li>Shows joy, family, and poverty around him</li>
-								</ul>
-							</li>
-							<li style="margin-top: 15px;"><strong>Ghost of Christmas Yet to Come:</strong> Represents the future
-								<ul style="font-size: 24px; margin-top: 10px;">
-									<li>Shows the consequences of his actions</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 5: Social Responsibility -->
+        <div class="slide">
+            <h2>Theme 2: Social Responsibility & Charity</h2>
+            <ul>
+                <li><strong>The Poor & Suffering:</strong> Central to the narrative</li>
+                <li><strong>Tiny Tim:</strong> Symbol of innocent suffering
+                    <div style="margin-top: 10px; margin-left: 30px;">
+                        <div>• Dies without Scrooge's help</div>
+                        <div>• Represents hope when saved by redeemed Scrooge</div>
+                    </div>
+                </li>
+                <li style="margin-top: 20px;" class="highlight">"If they would rather die, they had better do it, and decrease the surplus population" - Scrooge's callousness</li>
+                <li style="margin-top: 20px;"><strong>Message:</strong> Wealth must be shared; compassion matters</li>
+            </ul>
+        </div>
 
-				<!-- Slide 4: Social Responsibility & Charity -->
-				<section>
-					<h2><span class="christmas-red">Theme 2: Social Responsibility & Charity</span></h2>
-					<div class="slide-content">
-						<ul>
-							<li><strong>The Poor & Suffering:</strong> Central to the narrative</li>
-							<li><strong>Tiny Tim:</strong> Symbol of innocent suffering
-								<ul style="font-size: 28px; margin-top: 10px;">
-									<li>Dies without Scrooge's help (yet to come timeline)</li>
-									<li>Represents hope when saved by redeemed Scrooge</li>
-								</ul>
-							</li>
-							<li style="margin-top: 15px;"><span class="highlight">"If they would rather die, they had better do it, and decrease the surplus population"</span> - Scrooge's callousness</li>
-							<li style="margin-top: 15px;"><strong>Message:</strong> Wealth must be shared; compassion matters</li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 6: Christmas Symbolism -->
+        <div class="slide">
+            <h2>Christmas: A Symbol of Hope & Renewal</h2>
+            <ul>
+                <li><strong>Christmas Spirit:</strong> Joy, generosity, togetherness</li>
+                <li><strong>Family & Love:</strong> Cratchits' celebration despite poverty</li>
+                <li><strong>Rebirth & Transformation:</strong> Like the Christmas season itself</li>
+                <li><strong>Universal Theme:</strong> Christmas transcends social class</li>
+                <li class="highlight">"I have always thought of Christmas as a good time... a kind, forgiving, charitable, pleasant time"</li>
+                <li style="margin-top: 20px;"><strong>Cultural Impact:</strong> Redefined Christmas in Victorian society</li>
+            </ul>
+        </div>
 
-				<!-- Slide 5: Christmas Symbolism -->
-				<section>
-					<h2><span class="christmas-green">Christmas: A Symbol of Hope & Renewal</span></h2>
-					<div class="slide-content">
-						<ul>
-							<li><strong>Christmas Spirit:</strong> Joy, generosity, togetherness</li>
-							<li><strong>Family & Love:</strong> Cratchits' celebration despite poverty</li>
-							<li><strong>Rebirth & Transformation:</strong> Like the Christmas season itself</li>
-							<li><strong>Universal Theme:</strong> Christmas transcends social class</li>
-							<li><span class="highlight">"I have always thought of Christmas as a good time... a kind, forgiving, charitable, pleasant time"</span></li>
-							<li><strong>Cultural Impact:</strong> Redefined Christmas in Victorian society</li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 7: Key Symbols -->
+        <div class="slide">
+            <h2>Key Symbols in the Novel</h2>
+            <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td>The Chain</td>
+                    <td>Consequences of greed & isolation</td>
+                </tr>
+                <tr>
+                    <td>Candles/Light</td>
+                    <td>Truth & Enlightenment</td>
+                </tr>
+                <tr>
+                    <td>Snow & Cold</td>
+                    <td>Scrooge's coldness & isolation</td>
+                </tr>
+                <tr>
+                    <td>Warmth & Fire</td>
+                    <td>Love, kindness, humanity</td>
+                </tr>
+                <tr>
+                    <td>Bells</td>
+                    <td>Spiritual awakening</td>
+                </tr>
+            </table>
+        </div>
 
-				<!-- Slide 6: Key Symbols & Objects -->
-				<section>
-					<h2><span class="christmas-red">Key Symbols in the Novel</span></h2>
-					<div class="slide-content">
-						<table style="width: 100%;">
-							<tr>
-								<td style="font-weight: bold; color: #26A65B;">Symbol</td>
-								<td style="font-weight: bold; color: #26A65B;">Meaning</td>
-							</tr>
-							<tr>
-								<td>The Chain</td>
-								<td>Consequences of greed & isolation</td>
-							</tr>
-							<tr>
-								<td>Candles/Light</td>
-								<td>Truth & Enlightenment</td>
-							</tr>
-							<tr>
-								<td>Snow & Cold</td>
-								<td>Scrooge's coldness & isolation</td>
-							</tr>
-							<tr>
-								<td>Warmth & Fire</td>
-								<td>Love, kindness, humanity</td>
-							</tr>
-							<tr>
-								<td>Bells</td>
-								<td>Spiritual awakening</td>
-							</tr>
-						</table>
-					</div>
-				</section>
+        <!-- Slide 8: Conclusion -->
+        <div class="slide">
+            <h2>Conclusion</h2>
+            <ul>
+                <li><strong>Timeless Message:</strong> Human nature can change</li>
+                <li><strong>Social Impact:</strong> Highlighted Victorian social issues</li>
+                <li><strong>Universal Appeal:</strong> Still relevant today</li>
+                <li><strong>Christmas Legacy:</strong> Shaped how we celebrate Christmas</li>
+                <li style="margin-top: 40px; color: #FFD700; font-size: 24px;"><strong>"God bless us, every one!" - Tiny Tim</strong></li>
+            </ul>
+        </div>
 
-				<!-- Slide 7: Conclusion -->
-				<section>
-					<h2><span class="christmas-red">Conclusion</span></h2>
-					<div class="slide-content">
-						<ul style="font-size: 28px;">
-							<li><strong>Timeless Message:</strong> Human nature can change</li>
-							<li><strong>Social Impact:</strong> Highlighted Victorian social issues</li>
-							<li><strong>Universal Appeal:</strong> Still relevant today</li>
-							<li><strong>Christmas Legacy:</strong> Shaped how we celebrate Christmas</li>
-							<li style="margin-top: 20px; color: #26A65B;"><strong>"God bless us, every one!" - Tiny Tim</strong></li>
-						</ul>
-					</div>
-				</section>
+        <!-- Slide 9: Thank You -->
+        <div class="slide thank-you">
+            <h1>Thank You!</h1>
+            <h3>Questions?</h3>
+            <p style="margin-top: 60px; font-size: 32px;">🎄 Merry Christmas! 🎄</p>
+        </div>
 
-				<!-- Thank You Slide -->
-				<section>
-					<h1><span class="christmas-green">Thank You!</span></h1>
-					<h3>Questions?</h3>
-					<p style="margin-top: 40px; font-size: 24px;">🎄 Merry Christmas! 🎄</p>
-				</section>
+        <!-- Controls -->
+        <div class="controls">
+            <button onclick="previousSlide()">← Previous</button>
+            <span class="slide-counter"><span id="current">1</span> / <span id="total">9</span></span>
+            <button onclick="nextSlide()">Next →</button>
+        </div>
+    </div>
 
-			</div>
-		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				transition: 'slide',
-				plugins: [ RevealNotes ]
-			});
-		</script>
-	</body>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        document.getElementById('total').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+    </script>
+</body>
 </html>
